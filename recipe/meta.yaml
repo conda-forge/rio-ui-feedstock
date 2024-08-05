@@ -1,5 +1,5 @@
 {% set name = "rio-ui" %}
-{% set version = "0.9.1" %}
+{% set version = "0.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rio_ui-{{ version }}.tar.gz
-  sha256: e4ad1f6ad2ed005558a7e7685f15c5e4a7570877d2d9047be7947e30f711de8d
+  sha256: 78553a392229584ecd58503ce0a4c3649fd136af95651074321089ee727e29fb
 
 build:
   entry_points:
@@ -27,7 +27,7 @@ requirements:
     - fuzzywuzzy >=0.18,<1.dev0
     - gitignore-parser ==0.1.11
     - httpx >=0.25,<1.dev0
-    - imy >=0.3.6,<0.4.dev0
+    - imy >=0.4.0
     - introspection >=1.9,<2.dev0
     - isort >=5.13,<6.dev0
     - keyring >=24.3,<25.dev0
