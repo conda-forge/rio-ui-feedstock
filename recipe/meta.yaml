@@ -1,3 +1,4 @@
+{% set python_min = python_min|default("0.1a0") %}
 {% set name = "rio-ui" %}
 {% set version = "0.10.7" %}
 
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rio_ui-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rio_ui-{{ version }}.tar.gz
   sha256: 2d5413d6345a4ae36ee33bf983af2cd5d2c75ad253801f0f9cc7ec7497b4b3b2
 
 build:
@@ -18,17 +19,16 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}.*
     - hatchling
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - fastapi >=0.110,<1.dev0
     - fuzzywuzzy >=0.18,<1.dev0
     - gitignore-parser ==0.1.11
-    - httpx >=0.27.2,<0.28.0.dev0
-    - imy >=0.4.0
-    - introspection >=1.9,<2.dev0
+    - httpx >=0.27.2,<0.28.dev0
+    - introspection >=1.9.2,<1.10.dev0
     - isort >=5.13,<6.dev0
     - keyring >=24.3,<25.dev0
     - pillow >=10.2,<11.dev0
@@ -38,7 +38,7 @@ requirements:
     - revel >=0.9.1,<0.10.dev0
     - timer-dict >=1.0,<2.dev0
     - tomlkit >=0.12,<1.dev0
-    - typing-extensions >=4.5
+    - typing_extensions >=4.5
     - unicall >=0.1.5,<0.2.dev0
     - uniserde >=0.3.14,<0.4.dev0
     - uvicorn-standard >=0.29.0,<0.30.dev0
@@ -47,6 +47,9 @@ requirements:
     - langcodes >=3.4.0
     - crawlerdetect >=0.1.7,<0.2.dev0
     - ordered-set >=4.1.0
+    - imy >=0.4.0
+    - path-imports >=1.1.2
+    - narwhals >=1.12.1
 
 test:
   imports:
@@ -56,6 +59,7 @@ test:
     - rio help
   requires:
     - pip
+    - python ={{ python_min }}
 
 about:
   home: https://github.com/rio-labs/rio
