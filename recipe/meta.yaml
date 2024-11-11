@@ -1,5 +1,5 @@
 {% set name = "rio-ui" %}
-{% set version = "0.10.4" %}
+{% set version = "0.10.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rio_ui-{{ version }}.tar.gz
-  sha256: 5b939eca734d60d79ec1b38069a945640c5e0b9662623d7fd56ad249041d5b93
+  sha256: 81604377156956c063d635b6f128f484a2d05a0cf23c3d2a90af79a705434ed2
 
 build:
   entry_points:
