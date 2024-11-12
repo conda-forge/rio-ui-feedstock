@@ -1,6 +1,5 @@
-{% set python_min = python_min|default("0.1a0") %}
 {% set name = "rio-ui" %}
-{% set version = "0.10.7" %}
+{% set version = "0.10.8" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rio_ui-{{ version }}.tar.gz
-  sha256: 2d5413d6345a4ae36ee33bf983af2cd5d2c75ad253801f0f9cc7ec7497b4b3b2
+  sha256: 81604377156956c063d635b6f128f484a2d05a0cf23c3d2a90af79a705434ed2
 
 build:
   entry_points:
@@ -19,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}.*
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
@@ -59,7 +58,7 @@ test:
     - rio help
   requires:
     - pip
-    - python ={{ python_min }}
+    - python {{ python_min }}
 
 about:
   home: https://github.com/rio-labs/rio
