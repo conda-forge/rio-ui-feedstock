@@ -23,6 +23,7 @@ requirements:
     - hatchling ==1.26.3
     - pip
   run:
+    # Secondary dependencies by imy[docstrings,deprecations] already fulfilled
     - python >={{ python_min }}
     - crawlerdetect >=0.1.7,<0.2.dev0
     - fastapi >=0.110,<1.dev0
@@ -49,9 +50,6 @@ requirements:
     - watchfiles >=0.21,<1.dev0
     - yarl >=1.9
     - python-multipart >=1.2,<2.dev0
-
-    # Needed by imy[docstrings,deprecations]
-    # All fulfilled by depedencies
 
 test:
   imports:
