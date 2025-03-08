@@ -49,7 +49,7 @@ requirements:
     - uvicorn-standard >=0.29.0,<0.30.dev0
     - watchfiles >=0.21,<1.dev0
     - yarl >=1.9
-    - python-multipart >=1.2,<2.dev0
+    - multipart >=1.2,<2.dev0
 
 test:
   imports:
